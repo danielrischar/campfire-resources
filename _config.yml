@@ -1,0 +1,7 @@
+title: Campfire Capers
+description: A collection of skits, songs, and stories for Cub Scouts
+theme: minima
+markdown: kramdown
+collections:
+  skits:
+    output: true
