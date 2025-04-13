@@ -1,6 +1,6 @@
 ---
+layout: skit
 title: "Got Any Duck Food?"
-type: skit
 age_groups:
   - Wolf
   - Bear
