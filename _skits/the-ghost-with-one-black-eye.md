@@ -23,15 +23,15 @@ tags:
 
 ## 👻 The Ghost with One Black Eye
 
-**Cast:**
+### Cast
 - One or two **scouts in a tent**
 - One scout as the **ghost** (wears a sheet or stands off stage)
 - Optional additional scouts for audience or echo effects
 
-**Setting:**
+### Setting
 A campsite at night. The tent is center stage. The ghost is offstage to begin.
 
-**Script:**
+### Script
 
 1. Scouts are in the tent, pretending to go to sleep.
 

@@ -24,15 +24,15 @@ tags:
 
 ## ✏️ Skit: The Broken Pencil
 
-**Cast:**
+### Cast
 - **Scout 1**: Investigator
 - **Scout 2**: Concerned Scout
 - Optional: Additional “helpers” or “witnesses”
 
-**Setting:**
+### Setting
 An “investigation” scene, like a detective show.
 
-**Script:**
+### Script
 
 1. **Scout 1** steps forward dramatically, holding a clipboard.
 

@@ -23,14 +23,14 @@ tags:
 
 ## 🦆 Skit: Got Any Duck Food?
 
-**Cast:**
+### Cast
 - **Customer**: A persistent individual inquiring about duck food.
 - **Store Owner**: A hardware store proprietor.
 
-**Setting:**
+### Setting
 A hardware store. The store owner stands behind a table or chair acting as the store counter.
 
-**Script:**
+### Script
 
 1. **Customer** enters the store.
 
