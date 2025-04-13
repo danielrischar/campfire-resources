@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1>🎶 {{ page.title }}</h1>
 
 <table>
   <tr><th>Age Groups</th><td>{{ page.age_groups | join: ", " }}</td></tr>
@@ -17,7 +17,7 @@ layout: default
 {% if page.instructions %}
 <h2>🎤 How to Sing It</h2>
 <div class="song-instructions">
-  {{ page.instructions }}
+  {{ page.instructions | markdownify }}
 </div>
 {% endif %}
 

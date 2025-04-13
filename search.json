@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /search.json
+---
+
+[
+    {% assign all_items = site.skits | concat: site.songs | concat: site.stories %}
+    {% for item in all_items %}
+    {
+      "title": {{ item.title | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "age_groups": {{ item.age_groups | jsonify }},
+      "themes": {{ item.themes | jsonify }},
+      "tags": {{ item.tags | jsonify }},
+      "number_of_scouts": {{ item.number_of_scouts | jsonify }},
+      "type": "{{ item.collection }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]

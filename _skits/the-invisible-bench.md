@@ -1,10 +1,10 @@
 ---
+layout: skit
 title: "The Invisible Bench"
 age_groups: ["Tiger", "Wolf", "Bear"]
-number_of_scouts: 4
+number_of_scouts: "3+"
 props: "None"
 themes: ["Humor", "Imagination", "Physical Comedy"]
-layout: skit
 tags:
   - overdone
   - funny

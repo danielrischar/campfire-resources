@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>📖 {{ page.title }}</h1>
+
+<table>
+  <tr><th>Age Groups</th><td>{{ page.age_groups | join: ", " }}</td></tr>
+  <tr><th>Storyteller</th><td>{{ page.storyteller }}</td></tr>
+  <tr><th>Length</th><td>{{ page.length }}</td></tr>
+  <tr><th>Tone</th><td>{{ page.tone | join: ", " }}</td></tr>
+  <tr><th>Tags</th><td>{{ page.tags | join: ", " }}</td></tr>
+</table>
+
+<hr>
+
+<div class="story-content">
+  {{ content | markdownify }}
+</div>

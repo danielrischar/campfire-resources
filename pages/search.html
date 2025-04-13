@@ -1,0 +1,297 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+
+<h1>🔎 Campfire Content Search</h1>
+
+<div class="search-controls">
+  <input type="text" id="searchBox" placeholder="Search by keyword..." />
+
+  <div class="filter-row">
+    <div class="filter-group">
+      <label for="ageFilter">🎯 Age Group:</label>
+      <select id="ageFilter">
+        <option value="">All Ages</option>
+        <option value="Lion">Lion</option>
+        <option value="Tiger">Tiger</option>
+        <option value="Wolf">Wolf</option>
+        <option value="Bear">Bear</option>
+        <option value="Webelos">Webelos</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="scoutCountFilter">👥 Number of Scouts:</label>
+      <select id="scoutCountFilter">
+        <option value="">Any</option>
+        {% for i in (1..9) %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+        <option value="10">10+</option>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+<fieldset class="content-types">
+  <legend>📦 Content Types:</legend>
+  <label><input type="checkbox" class="typeFilter" value="skits" checked> Skits</label>
+  <label><input type="checkbox" class="typeFilter" value="songs" checked> Songs</label>
+  <label><input type="checkbox" class="typeFilter" value="stories" checked> Stories</label>
+</fieldset>
+</div>
+
+<div id="results" class="results-container"></div>
+
+
+<style>
+  .search-controls {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .search-controls input[type="text"] {
+    padding: 0.4rem;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+
+  .filter-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+  }
+
+  .filter-group label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  #ageFilter,
+  #scoutCountComparator,
+  #scoutCountInput {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  #ageFilter,
+  #scoutCountComparator {
+    width: 150px;
+  }
+
+  #scoutCountInput {
+    width: 70px;
+    margin-right: 0.5rem;
+  }
+
+  .scout-count-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .content-types {
+    border: none;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .content-types legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .content-types label {
+    margin-right: 1rem;
+  }
+
+  #results li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  #results li a {
+    font-weight: bold;
+  }
+
+  #results em {
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+
+  .results-container {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.result-group {
+  margin-bottom: 2rem;
+  border-top: 2px solid #ddd;
+  padding-top: 1rem;
+}
+
+.result-group h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.result-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.result-group li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.result-group li a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+</style>
+
+<script>
+  fetch('{{ "/search.json" | relative_url }}')
+    .then(res => res.json())
+    .then(data => {
+      const input = document.getElementById('searchBox');
+      const ageFilter = document.getElementById('ageFilter');
+      const scoutCountFilter = document.getElementById('scoutCountFilter'); // ✅ fixed
+      const typeCheckboxes = document.querySelectorAll('.typeFilter');
+      const results = document.getElementById('results');
+
+      function getSelectedTypes() {
+        return Array.from(typeCheckboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+      }
+
+      function renderResults() {
+        const query = input.value.toLowerCase();
+        const selectedAge = ageFilter.value;
+        const selectedTypes = getSelectedTypes();
+        const scoutCountSelected = scoutCountFilter.value; // ✅ fixed
+        const selectedScoutCount = scoutCountSelected ? parseInt(scoutCountSelected, 10) : null;
+        results.innerHTML = '';
+
+        const filtered = data.filter(item => {
+          const matchesQuery =
+            item.title.toLowerCase().includes(query) ||
+            (item.themes && item.themes.join(', ').toLowerCase().includes(query)) ||
+            (item.tags && item.tags.join(', ').toLowerCase().includes(query));
+
+          const matchesAge =
+            !selectedAge || (item.age_groups && item.age_groups.includes(selectedAge));
+
+          const matchesType =
+            selectedTypes.length === 0 || selectedTypes.includes(item.type);
+
+          let matchesScoutCount = true;
+          if (selectedScoutCount !== null) {
+            const scoutField = item.number_of_scouts;
+
+            if (!scoutField) {
+              matchesScoutCount = false;
+            } else if (typeof scoutField === 'string') {
+              const normalized = scoutField.trim();
+
+              if (/^\d+$/.test(normalized)) {
+                matchesScoutCount = parseInt(normalized, 10) === selectedScoutCount;
+              } else if (/^\d+\+$/.test(normalized)) {
+                const min = parseInt(normalized, 10);
+                matchesScoutCount = selectedScoutCount >= min;
+              } else if (/^(\d+)-(\d+)$/.test(normalized)) {
+                const [_, minStr, maxStr] = normalized.match(/^(\d+)-(\d+)$/);
+                const min = parseInt(minStr, 10);
+                const max = parseInt(maxStr, 10);
+                matchesScoutCount = selectedScoutCount >= min && selectedScoutCount <= max;
+              } else {
+                matchesScoutCount = false;
+              }
+            } else {
+              matchesScoutCount = false;
+            }
+          }
+
+          return matchesQuery && matchesAge && matchesType && matchesScoutCount;
+        });
+
+        if (filtered.length === 0) {
+          results.innerHTML = '<p style="text-align: center;">No results found.</p>';
+        } else {
+          const grouped = {
+            skits: [],
+            songs: [],
+            stories: []
+          };
+
+          filtered.forEach(item => {
+            if (grouped[item.type]) {
+              grouped[item.type].push(item);
+            }
+          });
+
+          const titleCase = {
+            skits: '🎭 Skits',
+            songs: '🎶 Songs',
+            stories: '📖 Stories'
+          };
+
+          results.innerHTML = '';
+
+          Object.keys(grouped).forEach(type => {
+            if (grouped[type].length > 0) {
+              const section = document.createElement('section');
+              section.classList.add('result-group');
+
+              const heading = document.createElement('h2');
+              heading.textContent = titleCase[type];
+              section.appendChild(heading);
+
+              const ul = document.createElement('ul');
+              grouped[type].forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${item.url}">${item.title}</a>${item.number_of_scouts ? ` <em>(${item.number_of_scouts} Scouts)</em>` : ''
+                  }`;
+                ul.appendChild(li);
+              });
+
+              section.appendChild(ul);
+              results.appendChild(section);
+            }
+          });
+        }
+
+      }
+
+      input.addEventListener('input', renderResults);
+      ageFilter.addEventListener('change', renderResults);
+      scoutCountFilter.addEventListener('change', renderResults); // ✅ fixed
+      typeCheckboxes.forEach(cb => cb.addEventListener('change', renderResults));
+
+      renderResults();
+    });
+
+</script>

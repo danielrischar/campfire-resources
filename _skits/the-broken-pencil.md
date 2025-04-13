@@ -6,7 +6,7 @@ age_groups:
   - Tiger
   - Wolf
   - Bear
-number_of_scouts: 2–4
+number_of_scouts: "2-4"
 props:
   - A pencil (or obviously fake large "prop" pencil)
   - Optional: clipboard, notebook, oversized glasses

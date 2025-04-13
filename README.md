@@ -1,1 +1,1 @@
-# campfire-resources
+<a href="{{ "/search/" | relative_url }}">Search</a>

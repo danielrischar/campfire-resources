@@ -5,7 +5,7 @@ age_groups:
   - Wolf
   - Bear
   - Webelos
-number_of_scouts: 2
+number_of_scouts: "2"
 props:
   - Table or chair (to represent a store counter)
   - Optional: apron or name tag for the store owner

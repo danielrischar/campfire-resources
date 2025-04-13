@@ -14,7 +14,7 @@ tags:
   - participation
   - action-song
 tune: "Traditional"
-instructions: >
+instructions: |
   - Scouts should act out the movements described in the lyrics. Stand up for "up", sit down for "down", crouch for "halfway up".
   - Can be repeated faster each time for added fun.
   - Perfect for getting wiggles out during a campfire or den meeting.

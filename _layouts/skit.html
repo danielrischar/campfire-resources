@@ -2,12 +2,32 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h1>🎭 {{ page.title }}</h1>
 
 <table>
   <tr><th>Age Groups</th><td>{{ page.age_groups | join: ", " }}</td></tr>
   <tr><th>Number of Scouts</th><td>{{ page.number_of_scouts }}</td></tr>
-  <tr><th>Props Needed</th><td>{{ page.props_needed }}</td></tr>
+  <tr>
+    <th>Props Needed</th>
+    <td>
+      {% if page.props %}
+        <ul>
+          {% for prop in page.props %}
+            <li>
+              {% if prop contains "Optional" %}
+                <em>{{ prop }}</em>
+              {% else %}
+                {{ prop }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        None
+      {% endif %}
+    </td>
+  </tr>
+  
   <tr><th>Themes</th><td>{{ page.themes | join: ", " }}</td></tr>
 </table>
 
