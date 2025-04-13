@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Jekyll Site",
+      "type": "pwa-node",
+      "request": "launch",
+      "preLaunchTask": "Serve Jekyll Site",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Server running at (http://localhost:4000)",
+        "uriFormat": "%s"
+      }
+    }
+  ]
+}

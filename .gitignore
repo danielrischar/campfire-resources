@@ -1,0 +1,16 @@
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler-related directories
+.bundle/
+vendor/
+
+# OS-specific files
+.DS_Store
+
+# GitHub Pages uses the github-pages gem, which locks dependencies to specific versions,
+# making a local Gemfile.lock potentially redundant and a source of conflicts. 
+Gemfile.lock
