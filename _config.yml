@@ -1,6 +1,7 @@
 title: Campfire Resources
 description: A collection of skits, songs, and stories for Cub Scouts
 theme: minima
+show_downloads: true
 markdown: kramdown
 baseurl: "/campfire-resources"
 collections:
@@ -13,4 +14,9 @@ collections:
   stories:
     output: true
     permalink: /stories/:name/
-
+header_pages:
+  - pages/search.html
+  - skits.md
+  - songs.md
+  - stories.md
+  - CONTRIBUTING.md
