@@ -2,9 +2,15 @@
 title: "The Invisible Bench"
 age_groups: ["Tiger", "Wolf", "Bear"]
 number_of_scouts: 4
-props_needed: "None"
+props: "None"
 themes: ["Humor", "Imagination", "Physical Comedy"]
 layout: skit
+tags:
+  - overdone
+  - funny
+  - campfire
+  - dialogue
+  - audience-favorite
 ---
 
 ## Scene: The Invisible Bench

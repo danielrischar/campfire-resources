@@ -2,6 +2,15 @@ title: Campfire Capers
 description: A collection of skits, songs, and stories for Cub Scouts
 theme: minima
 markdown: kramdown
+baseurl: "/campfire-resources"
 collections:
   skits:
     output: true
+    permalink: /skits/:name/
+  songs:
+    output: true
+    permalink: /songs/:name/
+  stories:
+    output: true
+    permalink: /stories/:name/
+

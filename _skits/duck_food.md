@@ -1,9 +1,7 @@
 ---
 title: "Got Any Duck Food?"
 type: skit
-age_levels:
-  - Lion
-  - Tiger
+age_groups:
   - Wolf
   - Bear
   - Webelos

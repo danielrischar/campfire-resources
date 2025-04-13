@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Index
+title: Content
 ---
 
 <h1>Lion</h1>
