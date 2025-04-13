@@ -7,7 +7,7 @@ title: Content
 <ul>
   {% for skit in site.skits %}
     {% if skit.age_groups contains "Lion" %}
-      <li><a href="{{ skit.url }}">{{ skit.title }}</a></li>
+      <li><a href="{{ skit.url | relative_url }}">{{ skit.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
@@ -16,7 +16,7 @@ title: Content
 <ul>
   {% for skit in site.skits %}
     {% if skit.age_groups contains "Tiger" %}
-      <li><a href="{{ skit.url }}">{{ skit.title }}</a></li>
+      <li><a href="{{ skit.url | relative_url }}">{{ skit.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
@@ -25,7 +25,7 @@ title: Content
 <ul>
   {% for skit in site.skits %}
     {% if skit.age_groups contains "Wolf" %}
-      <li><a href="{{ skit.url }}">{{ skit.title }}</a></li>
+      <li><a href="{{ skit.url | relative_url }}">{{ skit.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
@@ -34,7 +34,7 @@ title: Content
 <ul>
   {% for skit in site.skits %}
     {% if skit.age_groups contains "Bear" %}
-      <li><a href="{{ skit.url }}">{{ skit.title }}</a></li>
+      <li><a href="{{ skit.url | relative_url }}">{{ skit.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
@@ -43,7 +43,7 @@ title: Content
 <ul>
   {% for skit in site.skits %}
     {% if skit.age_groups contains "Webelos" %}
-      <li><a href="{{ skit.url }}">{{ skit.title }}</a></li>
+      <li><a href="{{ skit.url | relative_url }}">{{ skit.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
