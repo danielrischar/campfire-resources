@@ -28,33 +28,35 @@ instructions: |
   - Great for involving the audience and creating laughs during a campfire program.
 ---
 
+### Notes
+The fun is in the wordplay! If someone gives a dog name that doesn't match a bean, the leader can quickly adapt or suggest a different name that works with the song. Some of these wordplays rely on pronunciation similarities rather than actual beans.
+
 ## Opening Verse
 
-> My dog Rover likes to roam,  
-> One day Rover left his home.  
-> He came back, nice and clean,  
-> Where oh where had Rover been?  
-> Rover been, Rover been,  
-> Where oh where had Rover been?
-
-## Audience Participation
-
-*(Leader speaks):*  
-"Hey, [person's name]!"  
-*(Person responds):* "Yeah?"  
-"Do you have a dog?"  
-*(Person responds):* "Yeah!"  
-"What's your dog's name?"  
-*(Person responds):* "Jelly!"
-
-## Response Verse Example
-
-> [Person]'s dog Jelly likes to roam,  
+> My dog Jelly likes to roam,  
 > One day Jelly left his home.  
 > He came back, nice and clean,  
 > Where oh where had Jelly bean?  
 > Jelly bean, Jelly bean,  
 > Where oh where had Jelly bean?
+
+## Audience Participation
+
+> *(Leader speaks):*  
+> "Hey, [person's name]!"  
+> *(Person responds):* "Yeah?"  
+> "Do you have a dog?"  
+> *(Person responds):* "Yeah!"  
+> "What's your dog's name?"  
+> *(Person responds):* "Coffee!"
+
+## Response Verse Example
+> [Person]'s dog Coffee likes to roam,  
+> One day Coffee left his home.  
+> He came back, nice and clean,  
+> Where oh where had Coffee bean?  
+> Coffee bean, Coffee bean,  
+> Where oh where had Coffee bean?
 
 ## Additional Bean Name Ideas
 
@@ -64,12 +66,18 @@ instructions: |
 * Kidney (Kidney bean)
 * Garbanzo (Garbanzo bean)
 * Lima (Lima bean)
-* Coffee (Coffee bean)
 * Pinto (Pinto bean)
 * String (String bean)
 * Green (Green bean)
 * Baked (Baked bean)
 * Refried (Refried bean)
-* Human (human being)
-
-*Note: The fun is in the wordplay! If someone gives a dog name that doesn't match a bean, the leader can quickly adapt or suggest a different name that works with the song.*
+* Human (Human being)
+* Has (Has been)
+* Robin (Robin bean/been)
+* Carib (Caribbean)
+* Jelly (Jelly bean)
+* Soy (Soy bean)
+* Chilly (Chili bean)
+* Vanilla (Vanilla bean)
+* Butter (Butter bean)
+* Canary (Canary bean)
