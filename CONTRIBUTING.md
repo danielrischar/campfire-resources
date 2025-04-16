@@ -102,6 +102,8 @@ tags:
 ---
 ```
 
+Use :::line, :::action, and :::ask to mark storyteller lines, actions, and audience questions. End each block with :::.
+
 ### ✅ Notes:
 
 - Use `- "Optional:..."` in `props:` to flag optional items (quotes are required).
@@ -164,7 +166,7 @@ Now here is the content to format:
 ---
 
 ## 🔍Searching
-9search.json](https://github.com/danielrischar/campfire-resources/blob/main/search.json) defines what properties are searchable by converting them to json.  If you add a new property to yaml front matter, you need to add it here to make it searchable.
+[search.json](https://github.com/danielrischar/campfire-resources/blob/main/search.json) defines what properties are searchable by converting them to json.  If you add a new property to yaml front matter, you need to add it here to make it searchable.
 
 When GitrHub pages deploys, Jekyll will generate a json file for all content based on thes tags, that's how the searching is then performed on the frontend.
 

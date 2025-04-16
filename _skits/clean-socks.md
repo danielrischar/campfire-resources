@@ -2,7 +2,6 @@
 layout: skit
 title: "Clean Socks"
 age_groups:
-  - Lion
   - Tiger
   - Wolf
   - Bear

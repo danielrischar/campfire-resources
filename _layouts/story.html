@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+<head>
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+</head>
+
 
 <h1>📖 {{ page.title }}</h1>
 
@@ -15,5 +19,14 @@ layout: default
 <hr>
 
 <div class="story-content">
-  {{ content | markdownify }}
+  {% capture parsed %}
+    {{ content | markdownify }}
+  {% endcapture %}
+
+  {{ parsed
+    | replace: ':::line', '<div class="story-line">'
+    | replace: ':::motion', '<div class="story-action">'
+    | replace: ':::ask', '<div class="story-ask">'
+    | replace: ':::', '</div>'
+  }}
 </div>

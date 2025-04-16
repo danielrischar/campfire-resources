@@ -1,0 +1,67 @@
+.story-line {
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+  }
+  
+  .story-action {
+    font-style: italic;
+    background: #f1f1f1;
+    border-left: 4px solid #aaa;
+    padding: 0.5rem 1rem;
+    margin: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+  
+  .story-ask {
+    font-weight: bold;
+    background: #fff9e0;
+    border-left: 4px solid #e0b000;
+    padding: 0.5rem 1rem;
+    margin: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+  
+  .story-line::before {
+    content: "🎙️";
+  }
+  
+  .story-action::before {
+    content: "🤲 ";
+  }
+  
+  .story-ask::before {
+    content: "🙋 ";
+  }
+
+  @media print {
+    /* Hide Minima’s header and footer */
+    .site-header,
+    .site-footer,
+    .page-title,
+    .print-button,
+    nav,
+    .navigation,
+    .site-nav,
+    .site-title,
+    .site-nav,
+    .site-description {
+      display: none !important;
+    }
+  
+    /* Expand content area to full width */
+    .page-content {
+      margin: 0 !important;
+      padding: 0.5in 0.75in !important;
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+  
+    /* Clean up printed text */
+    body {
+      background: #fff !important;
+      color: #000;
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+  }
+  

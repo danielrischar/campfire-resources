@@ -2,6 +2,7 @@
 layout: skit
 title: "Dirty Socks"
 age_groups:
+  - Wolf
   - Bear
   - Webelos
 number_of_scouts: "4"
